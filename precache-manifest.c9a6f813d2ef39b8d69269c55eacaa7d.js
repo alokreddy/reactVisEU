@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/reactVisEU/static/js/runtime~main.20c9b5ca.js"
   },
   {
-    "revision": "d6bb0297b8367dc05c5a",
-    "url": "/reactVisEU/static/js/main.d6bb0297.chunk.js"
+    "revision": "29f536d069a295c147d3",
+    "url": "/reactVisEU/static/js/main.29f536d0.chunk.js"
   },
   {
     "revision": "c28345c7aa4ca2d33c73",
     "url": "/reactVisEU/static/js/2.c28345c7.chunk.js"
   },
   {
-    "revision": "d6bb0297b8367dc05c5a",
+    "revision": "29f536d069a295c147d3",
     "url": "/reactVisEU/static/css/main.49bca369.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/reactVisEU/static/css/2.60d12c10.chunk.css"
   },
   {
-    "revision": "733f5c17b4352725c6f9aafff11fda36",
+    "revision": "f2b88e9265ae91cc3d0190a949d16c42",
     "url": "/reactVisEU/index.html"
   }
 ];
