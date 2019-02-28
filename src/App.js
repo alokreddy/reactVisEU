@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <XYPlot margin={{ left: 100, top: 100 }} xType="ordinal"
-          height={500} width={700}>
+          height={600} width={800}>
           <VerticalGridLines />
           <HorizontalGridLines />
           <XAxis position="middle" title="EU Country" />
