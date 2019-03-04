@@ -30,21 +30,28 @@ const data = [
   { x: 'Switzerland', y: 1440, size: 41290 }
 ];
 
+const dataArr = data.map((d) => {
+  return {
+    x: d.x,
+    y: d.size,
+    size: d.size
+  }
+});
+
+
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hoveredNode: false,
-      results: data,
+      barData: data,
+      bubbleData: dataArr
     };
   }
 
   render() {
 
-    const {hoveredNode} = this.state;
-
     return (
-      <div className="App">
+      <div className="App" >
         <Wrapper>
           <div>
             <XYPlot
@@ -56,14 +63,8 @@ class App extends Component {
               <XAxis position="middle" title="EU Country" tickLabelAngle={-60} />
               <YAxis position="middle" title="Total length of motorways. (KM)" />
               <VerticalBarSeries
-                onValueMouseOver={x => this.setState({
-                  results: data.filter(function (data) {
-                    return data.x === "France";
-                  })
-                })}
-                onValueMouseOut={(datapoint, event) => this.setState({ results: data })}
                 opacity="0.6"
-                data={this.state.results} />
+                data={this.state.barData} />
             </XYPlot>
           </div>
           <div>
@@ -74,15 +75,9 @@ class App extends Component {
               <XAxis position="middle" title="Country" tickLabelAngle={-60} />
               <YAxis position="middle" title="Area of country in Europe. (Sq. KMs)" />
               <MarkSeries
-                onValueMouseOver={event => this.setState({
-                  results: data.filter(function (data) {
-                    return data.x === event;
-                  })
-                })}
-                onValueMouseOut={() => this.setState({ results: data })}
                 strokeWidth={2}
                 opacity="0.8"
-                sizeRange={[2, 30]} data={this.state.results} />
+                sizeRange={[2, 30]} data={this.state.bubbleData} />
             </XYPlot>
           </div>
         </Wrapper>
