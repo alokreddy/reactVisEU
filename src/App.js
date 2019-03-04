@@ -11,10 +11,38 @@ import { XYPlot, VerticalBarSeries, MarkSeries, VerticalGridLines, HorizontalGri
 //data is obtained from https://en.wikipedia.org/wiki/List_of_European_countries_by_area
 
 const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
+  padding: 1em;
+  background: white;
   display:flex;
   flex-direction:row;
+  font-size: 2rem;
+  margin-left: 2rem;
+  position: relative;
+  z-index: 2;
+  @media (max-width: 1300px) {
+    margin: 0;
+    text-align: center;
+  }
+`;
+
+
+const Logo = styled.h1`
+  font-size: 3rem;
+  //margin-left: 2rem;
+  position: relative;
+  z-index: 2;
+  //transform: skew(-7deg);
+ 
+    padding: 0.5rem 1rem;
+    background: midnightblue;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+ 
+    @media (max-width: 1300px) {
+    margin: 0;
+    text-align: center;
+  }
 `;
 
 const data = [
@@ -52,12 +80,14 @@ class App extends Component {
 
     return (
       <div className="App" >
+      <Logo>Length of Motorways VS Country size (EU)</Logo>
         <Wrapper>
           <div>
+          <p>Length of Motorways</p>
             <XYPlot
               margin={{ left: 100, top: 50, bottom: 100 }}
               xType="ordinal"
-              height={480} width={480}>
+              height={540} width={720}>
               <VerticalGridLines />
               <HorizontalGridLines />
               <XAxis position="middle" title="EU Country" tickLabelAngle={-60} />
@@ -68,8 +98,9 @@ class App extends Component {
             </XYPlot>
           </div>
           <div>
+          <p>Size of country (in Europe)</p>
             <XYPlot margin={{ left: 100, top: 50, bottom: 100 }} xType="ordinal"
-              height={480} width={480}>
+              height={540} width={720}>
               <VerticalGridLines />
               <HorizontalGridLines />
               <XAxis position="middle" title="Country" tickLabelAngle={-60} />
